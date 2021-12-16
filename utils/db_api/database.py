@@ -1,5 +1,5 @@
 from gino import Gino
-from data.config import DB_HOST, DB_NAME, DB_PASS,DB_USER,DB_PORT,DB_SSLMODE
+from data.config import DB_HOST, DB_NAME, DB_PASS,DB_USER
 
 db = Gino()
 
@@ -84,6 +84,6 @@ class DBCommands():
         return orders
 async def create_db():
     # await db.set_bind(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}")
-    await db.set_bind(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
+    await db.set_bind(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}")
     # await db.gino.drop_all()
     # await db.gino.create_all()
